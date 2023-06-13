@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100vh;
+    min-width: 800px;
+    max-width: 1440px;
+    /*     height: 100vh;
+ */
+    /*     margin: 0 auto 0 0;
+ */
+}
+
+/* TARJETAS */
+#cards-container {
+    background-image: url(Img/bg-main-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#card-front {
+    background-image: url(Img/bg-card-front.png);
+    width: 313px;
+    height: 171px;
+    background-size: cover;
+    z-index: 1000;
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    color: white;
+}
+
+#full-circle {
+    width: 10%;
+    aspect-ratio: 1/1;
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    border-radius: 50%;
+}
+
+#empty-circle {
+    width: 7%;
+    aspect-ratio: 1/1;
+    border: 2px solid white;
+    position: absolute;
+    top: 13.5%;
+    left: 20%;
+    border-radius: 50%;
+}
+
+#card-front-number {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: white;
+    font-size: 20px;
+    letter-spacing: .1vw;
+}
+
+#card-front-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 10px;
+    margin: 5% 10%;
+    color: white;
+    letter-spacing: .1vw;
+    position: relative;
+    top: 70%;
+    text-transform: uppercase;
+}
+
+#card-back {
+    background-image: url(img/bg-card-back.png);
+    background-size: cover;
+    width: 313px;
+    height: 171px;
+    z-index: 999;
+    position: absolute;
+    left: 20%;
+    bottom: 25%;
+}
+
+#card-back-cvc {
+    color: white;
+    position: absolute;
+    left: 250px;
+    bottom: 80px;
+    font-size: 10px;
+}
+
+/* FORMULARIO */
+#form-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 5%;
+}
+
+form {
+    font-size: .7em;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    min-height: 300px;
+    min-width: 300px;
+    margin-left: 250px;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+input {
+    border-radius: 5px;
+    border-color: hsl(270, 3%, 87%);
+    border-style: solid;
+    height: 5vh;
+    padding: 5px;
+    width: 100%;
+    margin: 5px 0;
+}
+
+input::placeholder {
+    color: hsl(270, 3%, 87%);
+}
+
+
+/* El border radius de el input active no funciona */
+
+input:focus {
+    border-image: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    border-image-slice: 1;
+    outline: none;
+    border-radius: 5px;
+}
+
+#card-info {
+    display: flex;
+    align-items: end;
+}
+
+#exp-date {
+    border: none;
+    display: flex;
+    align-items: end;
+    padding: 0;
+    margin-right: 5px;
+}
+
+#exp-date-month {
+    margin-right: 5px;
+}
+
+button {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    height: 5vh;
+    width: 100%;
+    cursor: pointer;
+    transition: scale 0.3s ease;
+}
+
+button:hover {
+    scale: 1.05;
+}
+
+/* ERRORES */
+.error {
+    color: hsl(0, 100%, 66%);
+    font-size: xx-small;
+}
+
+.error-container {
+    display: flex;
+    text-align: center;
+}
+
+#exp-month-error {
+    width: 33%;
+    text-align: start;
+}
+
+#exp-year-error {
+    width: 33%;
+    text-align: start;
+}
+
+#cvc-error {
+    width: 33%;
+    text-align: start;
+}
+
+input.error {
+    border-color: hsl(0, 100%, 66%);
+}
+
+/* COMPLETE */
+#complete {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    width: 40%;
+    min-width: 280px;
+    height: 100%;
+}
+
+h4 {
+    color: hsl(279, 6%, 55%);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    margin: 1rem;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        grid-template-rows: 43vh 57vh;
+        grid-template-columns: 1fr;
+        height: 100%;
+        width: 100vw;
+        min-width: 350px;
+    }
+
+    #cards-container {
+        grid-row: 1;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #form-container {
+        display: block;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    #complete {
+        width: 100%;
+    }
+
+    #card-front {
+        top: 25%;
+        left: auto;
+        margin-right: 10%;
+    }
+
+    #card-back {
+        top: 10%;
+        left: auto;
+        margin-left: 10%;
+    }
+
+    form {
+        margin: 0;
+        margin-top: 5%;
+        padding: 10%;
+        width: 100%;
+        height: 100%;
+        font-size: 1em;
+        justify-content: space-around;
+    }
+
+    input,
+    button {
+        height: 6vh;
+    }
+}

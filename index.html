@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <title>
+        Sprint 1 Valentina Peralta
+    </title>
+    <link rel="icon" href="Img/favicon-32x32.png">
+
+</head>
+
+<body>
+    <section id="cards-container">
+        <div id="card-front">
+            <div id="full-circle"></div>
+            <div id="empty-circle"></div>
+            <p id="card-front-number">0000 0000 0000 0000</p>
+            <div id="card-front-info">
+                <p id="card-front-info-name">JANE APPLESEED</p>
+                <P><span id="card-front-info-month">00</span>/<span id="card-front-info-year">00</span></P>
+            </div>
+        </div>
+        <div id="card-back">
+            <p id="card-back-cvc">000</p>
+
+        </div>
+    </section>
+    <section id="form-container">
+        <form id="form" action="javascript:void(0);">
+            <div id="cardholder">
+                <label for="">CARDHOLDER NAME</label>
+                <input id="card-name-input" type="text" placeholder="e.g. Jane Appleseed">
+                <div id="name-error" class="error"></div>
+            </div>
+            <div id="card-number">
+                <label for="">CARD NUMBER</label>
+                <input id="card-number-input" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+                <div id="number-error" class="error"></div>
+
+            </div>
+            <div id="card-info">
+                <fieldset id="exp-date">
+                    <legend>EXP. DATE (MM/YY)</legend>
+                    <input id="exp-date-month" type="text" placeholder="MM" maxlength="2">
+                    <input id="exp-date-year" type="text" placeholder="YY" maxlength="2">
+                </fieldset>
+                <!--                 <div id="exp-year-error" class="error"></div>
+                <div id="exp-month-error" class="error"> </div>
+ -->
+                <div id="cvc">
+                    <label for="">CVC</label>
+                    <input id="cvc-input" type="text" name="" maxlength="3" placeholder="e.g 123">
+
+                </div>
+
+            </div>
+            <div class="error-container">
+                <div id="exp-month-error" class="error"></div>
+                <div id="exp-year-error" class="error"></div>
+
+                <div id="cvc-error" class="error"></div>
+
+            </div>
+            <button disabled id="confirm" type="submit">Confirm</button>
+        </form>
+        <div id="complete">
+            <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="url(#a)" />
+                <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+                <defs>
+                    <linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#6348FE" />
+                        <stop offset="1" stop-color="#610595" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <h1>THANK YOU!</h1>
+            <h4>We've added your card details</h4>
+            <button id="continue" type="submit">Continue</button>
+
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
